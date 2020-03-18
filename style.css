@@ -1,0 +1,108 @@
+body {
+  margin:0;
+  padding:0;
+  --width-nav: 40px;
+  --width-menu:300px;
+  --color-menu:#fff;
+  font-family: Roboto;
+}
+
+header {
+  margin:0;
+  padding:0;
+}
+
+ul.navigation {
+  margin:0;
+  padding-top:20px;
+  position:fixed;
+  display:block;
+  top:0px;
+  left:0;
+  width:var(--width-nav);
+  height:100%;
+  min-height:100%;
+  z-index:3;
+  background:#fff;
+  border-right:1px solid #999;
+}
+
+ul.navigation li {
+  display:block;
+  text-align:center;
+}
+
+ul.navigation li a {
+  display:inline-block;
+  color:#ccc;
+  transition: all 0.2s linear;
+}
+
+ul.navigation li a:hover{
+  color:#999;
+}
+
+ul.menu {
+  margin:0;
+  position:absolute;
+  display:block;
+  top:0px;
+  left:var(--width-nav);
+  height:100%;
+  background:var(--color-menu);
+  width:var(--width-menu);
+  z-index:2;
+  margin-left:-300px;
+  transition: all 0.2s linear;
+}
+
+ul.menu li {
+  display:block;
+  position:relative;
+  padding:15px 5px 15px 30px;
+  text-align:left;
+  transition: all 0.2s linear;
+}
+ul.menu li:hover {
+  background:#eee;
+}
+ul.menu li:hover a {
+  color:#000;
+}
+
+ul.menu li a {
+  color:#000;
+  font-weight: 300;
+}
+
+ul.menu li:hover::after {
+  position:absolute;
+  display:block;
+  left:100%;
+  width:50px;
+  top:0;
+  background: url('../images/chevron.svg') no-repeat center center;
+  background-size:cover;
+  min-height:100%;
+  vertical-align: middle;
+  text-align:center;
+  content:" ";
+  font-size:2em;
+  color:#999;
+}
+
+.zone {
+  z-index: 1;
+  display:block;
+  position: absolute;
+  top:0;
+  right:0;
+  width:calc(100vw - var(--width-menu) - var(--width-nav) );
+  height:100vh;
+  background:#ccc;
+}
+
+main {
+  width:100%;
+  left:
+}

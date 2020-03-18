@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="icon" type="image/x-icon" href="">
+<link href="" rel="apple-touch-icon" />
+
+<meta property="og:site_name" content="Pixel art editor" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Pixel art editor" />
+  <meta property="og:description" content="Editeur de pixel art" />
+  <meta property="og:url" content="https://frvaillant.com/pixelart" />
+  <meta property="og:image" content="https://frvaillant.com/pixelart/images/mypixel.png" />
+
+      <title>
+          PIXEL ART EDITOR
+      </title>
+
+<!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,500,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One|Fredericka+the+Great|Josefin+Slab|Special+Elite" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/e7b29cc783.js" crossorigin="anonymous"></script>
+
+  </head>
+<body>
+
+<div class="zone" id="game">
+
+</div>
+<div class="zone" id="nuancier">
+
+</div>
+
+<div id="outils">
+  <div class="casenuancier white paint"><i class="fas fa-paint-roller"></i></div>
+  <div class="casenuancier white delete"><i class="fas fa-eraser"></i></div>
+</div>
+<div class="zone" id="menu">
+  <ul class="menu right-align">
+    <span class="gridSize grey-text">Taille de grille</span>
+    <li class="mgr10">
+      <a href="#" class=" black-text center-align capture"><i class="material-icons">save</i></a>
+      <a href="#" class="tooltipped help red-text center-align" data-position="top" data-tooltip="1 - Choisir une taille de grille<br>2 - Choisir une couleur<br>3 - Cliquer sur la grille<br>4 - En maintenant la touche 'A' enfoncée, survolez la grille<br><br>
+        <i class='material-icons tiny'>save</i> pour sauvegarder
+        <br><i class='fas fa-paint-roller'></i> pour tout remplir d'une couleur
+        <br><i class='fas fa-eraser'></i> pour tout effacer"><i class="material-icons">help_outline</i></a>
+
+    </li>
+
+
+    <li>
+      <a href="7" class="btn-floating btn-small light-green changeSize nobg">7</a>
+    </li>
+    <li>
+      <a href="11" class="btn-floating btn-small amber changeSize">11</a>
+    </li>
+    <li>
+      <a href="15" class="btn-floating btn-small orange darken-3 changeSize nobg">15</a>
+    </li>
+    <li>
+      <a href="21" class="btn-floating btn-small red changeSize nobg">21</a>
+    </li>
+
+
+  </ul>
+</div>
+
+</body>
+
+</html>
+
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+        <script src="js/htmltocanvas.js"/></script>
+
+        <script src="js/scripts.js"/></script>

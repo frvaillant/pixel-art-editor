@@ -1,0 +1,117 @@
+body {
+  /*
+  background: url('../images/bg.svg') no-repeat top left;
+  background-size:cover;
+  */
+}
+#imageHome {
+  position:absolute;
+  top:0;
+  left:0;
+}
+#game {
+  display:block;
+  background:none !important;
+
+}
+
+#nuancier, #outils {
+  display:block;
+  position:absolute;
+}
+
+#outils {
+  font-size:1.2em;
+}
+
+
+.casejeu {
+  border:0.5px solid #000;
+  float:left;
+}
+
+.casenuancier {
+  display:inline-block;
+  border:0.5px solid #000;
+  border-radius:50%;
+  transition:all 0.2s linear;
+}
+
+.casenuancier.paint, .casenuancier.delete {
+  border:none;
+}
+.casenuancier.paint:hover, .casenuancier.delete:hover {
+cursor:pointer;
+transform:scale(1.3);
+}
+
+.casenuancier:hover {
+  transform:scale(1.3);
+  cursor:pointer;
+}
+
+
+.casenuancier:not(.paint).active, .casenuancier:not(.delete).active {
+  border-radius:0%;
+  border:2px solid #000;
+  transform:scale(1.3);
+}
+.casenuancier.delete.active {
+  border:none !important;
+  transform:none;
+}
+
+#menu {
+  display:block;
+  text-align:center;
+  position:absolute;
+  top:10px;
+  left:50%;
+  margin-left:-200px;
+}
+
+#menu ul {
+  display:block;
+  width:100%;
+}
+
+#menu span {
+  display:block;
+  clear:both;
+}
+#menu ul li {
+  float:left;
+  margin-left:5px;
+
+}
+
+#menu ul li a {
+  padding: 0 7px 0 7px;
+  width:30px;
+  height:30px;
+}
+
+.mgr10 {
+  margin-right:25px;
+}
+.btn-small {
+  transition:all 0.2s linear;
+  box-shadow: none !important;
+  /*border-radius: 0 !important;*/
+}
+.btn-small:not(.changeSize):hover {
+  transform: scale(1.2);
+}
+
+.btn-small.changeSize.nobg {
+  background:#fff !important;
+  color:#ccc;
+}
+
+.btn-small.active {
+
+}
+
+.gridSize {
+  padding-right:20px;
+}
