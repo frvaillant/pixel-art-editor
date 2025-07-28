@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AiController!{% endblock %}
+
+{% block body %}
+
+
+
+    {% if grid %}
+
+        <div class="pixel-grid">
+            {% for row in 0..20 %}
+                {% for col in 0..20 %}
+                    {% set color = grid[row][col] ?? 'white' %}
+                    <div class="pixel" style="background: {{ color }}"></div>
+                {% endfor %}
+            {% endfor %}
+        </div>
+
+    {% endif %}
+
+{% endblock %}

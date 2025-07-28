@@ -1,0 +1,134 @@
+$sizes : (10, 15, 21, 30);
+$cell-size : '30px';
+$grid-size : 21;
+
+.pixel-art {
+
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    .chart-container {
+        display: grid;
+        gap: 5px;
+        grid-template-columns: repeat(10, 1fr);
+        grid-auto-rows: 40px;
+
+        .grid-cols-all {
+            display: flex;
+            align-items: center;
+            height: 100%;
+            grid-column: 1 / -1;
+        }
+
+        .color-box {
+            width: 40px;
+            height: 40px;
+            display: block;
+            border-radius: 8px;
+            border: 1px solid white;
+            transition: all 0.3s ease;
+            transform: scale(0.8);
+
+
+            &:hover {
+                cursor: pointer;
+            }
+
+            &.white {
+                border: 1px solid #ccc;
+            }
+
+            &.active {
+                border: 1px solid black;
+                transform: scale(1);
+                box-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+            }
+        }
+    }
+
+    .grid {
+        display: grid;
+        gap: 1px;
+        background: black;
+        border:1px solid black;
+        max-height: calc(#{$grid-size} * #{$cell-size} + ((#{$grid-size} - 1) * 1px));
+
+        @each $size in $sizes {
+            &.grid-#{$size} {
+                grid-template-columns: repeat(#{$size}, #{$cell-size});
+                grid-template-rows: repeat(#{$size}, #{$cell-size});
+            }
+        }
+
+        .box {
+            display: block;
+            width: $cell-size;
+            height: $cell-size;
+            background: white;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+
+    .tools {
+        display: flex;
+        flex-direction: column;
+        gap: 60px;
+        justify-content: start;
+        align-items: start;
+
+        .header {
+            display: flex;
+            gap: 40px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            justify-content: start;
+            align-items: stretch;
+            background: #eee;
+            padding: 10px;
+            border-radius: 10px;
+            width: max-content;
+            margin-bottom: 20px;
+            input {
+                padding: 0 5px;
+                border-radius: 5px;
+                box-shadow: none;
+                border: 1px solid #999;
+                height: 35px;
+                line-height: 35px;
+
+            }
+
+            button {
+                background: #16abab;
+                color: white;
+                box-shadow: none;
+                border:none;
+                padding: 0 10px;
+                height: 35px;
+                line-height: 35px;
+                border-radius: 5px;
+                display: flex;
+                justify-content: start;
+                width: 100%;
+                gap: 5px;
+                align-items: center;
+                svg.rotate {
+                    margin-left: auto;
+                }
+            }
+
+            img {
+                border-radius: 10px;
+                width: 220px;
+            }
+        }
+
+    }
+}
