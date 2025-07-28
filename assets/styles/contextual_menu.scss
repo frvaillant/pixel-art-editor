@@ -1,0 +1,26 @@
+.contextual-menu {
+    position: fixed;
+    min-width: 220px;
+    background: rgba(0,0,0,0.9);
+    border-radius: 0 8px 8px 8px;
+
+    a {
+        color:white;
+        font-family: sans-serif;
+        text-shadow: 0 0 1px black;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        width: 100%;
+        height: 40px;
+        padding: 0 8px;
+        &:hover {
+            cursor: pointer;
+            color: #B0413E;
+
+            svg {
+                fill: #B0413E;
+            }
+        }
+    }
+}

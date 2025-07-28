@@ -2,6 +2,7 @@ import { Controller } from '@hotwired/stimulus';
 import ColorChart from "../js/service/colorChart.js";
 import html2canvas from "html2canvas";
 import {Icons} from "../js/service/Icons.js";
+import contextualMenu from "../js/service/ContextualMenu.js";
 
 
 export default class extends Controller {
@@ -26,12 +27,17 @@ export default class extends Controller {
         this.colorChart.draw(this.element)
         this.draw()
 
-        /** If 'A' key is maintained pressed */
+        /** Represent if 'A' key is maintained pressed */
         this.keyPressed = false
 
-        /** The colorChart choosen Color */
+        /** The colorChart chosen Color */
         document.addEventListener('ColorHasChanged', () => {
             this.activeColor = this.colorChart.getColor()
+        })
+
+        /** The pipette chosen Color */
+        document.addEventListener('ColorHasBeenPicked', (e) => {
+            this.activeColor = e.detail.color
         })
 
         this.setupKeyboardListeners()
@@ -53,6 +59,11 @@ export default class extends Controller {
         window.addEventListener('keyup', evt => handler(evt, false));
     }
 
+    /**
+     * Test if drawing key is pressed
+     * @param evt
+     * @returns {boolean}
+     */
     drawingModeKeyIsPressed = (evt) => {
         return evt.key.toLowerCase() === 'a'
     }
@@ -104,6 +115,11 @@ export default class extends Controller {
             if(this.keyPressed) {
                 this.changeColor(e)
             }
+        })
+
+        box.addEventListener('contextmenu', (e) => {
+            e.preventDefault()
+            contextualMenu(e)
         })
 
         if (!this.boxes[row]) {
@@ -277,7 +293,7 @@ export default class extends Controller {
     }
 
     /**
-     * generates prompt for download picture
+     * Generates prompt for picture downloading
      * @param uri
      * @param filename
      */
